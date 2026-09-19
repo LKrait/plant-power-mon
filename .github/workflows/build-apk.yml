@@ -27,10 +27,11 @@ jobs:
           gradle-version: '8.9'
 
       - name: Build Android APK
+        working-directory: PlantPowerMonitoring
         run: gradle :app:assembleDebug --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: PlantPowerMonitoring-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: PlantPowerMonitoring/app/build/outputs/apk/debug/app-debug.apk
